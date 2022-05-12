@@ -1,3 +1,4 @@
+import cors from 'cors'
 import express from 'express'
 import dotenv from 'dotenv'
 
@@ -17,6 +18,8 @@ import errorHandlerMiddleware from './middleware/error-handler.js'
 
 // req.body json parsing middleware
 app.use(express.json())
+
+app.use(cors())
 
 //routes
 app.get('/inventory', (req, res) => {

@@ -1,18 +1,24 @@
+-- get endpoint to show only non working cars on click of btn
+-- error if did not fetch successfully (for api and useEf)
+-- add loading state
 
-//fetch with axios
-// error if did not fetch successfully
-//set state for current sort
-// add context
-// add onSale field for some trucks and nest sale price with inventory
-// create 6 more cars
-// delete post method, route, and Schema
-//on load of the home page we can fetch the inventory with only sales, add the data to an array, and carousel through it.
-// add charkra ui, wrap app.js
+-- set state for current sort
 
+-- add context
 
+-- add onSale field for some trucks
+ and nest sale price with inventory
+-- create 6 more cars
 
-// buttons that filter data then fetch
-// set up error messages if fetch fails
+-- delete post method, route, and Schema
+
+-- on load of the home page we can fetch the inventory with only sales, add the data to an array, and carousel through it.
+
+-- add charkra ui, wrap app.js
+
+-- buttons that filter data then fetch
+
+--  set up error messages if fetch fails
 
 
 
