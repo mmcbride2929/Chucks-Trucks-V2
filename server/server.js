@@ -22,10 +22,6 @@ app.use(express.json())
 app.use(cors())
 
 //routes
-app.get('/inventory', (req, res) => {
-  res.send('hello')
-})
-
 app.use('/api/v1/inventory', inventoryRouter)
 
 // 404 response

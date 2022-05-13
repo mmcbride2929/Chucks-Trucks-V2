@@ -18,4 +18,13 @@ const getAllVehicles = async (req, res) => {
   }
 }
 
-export { postVehicle, getAllVehicles }
+const getSingleVehicle = async (req, res) => {
+  try {
+    const singleVehicle = await Vehicle.findById(req.params.id)
+    res.status(200).send(singleVehicle)
+  } catch (error) {
+    res.status(500).json({ msg: 'fetch failed: there was an error' })
+  }
+}
+
+export { postVehicle, getAllVehicles, getSingleVehicle }
