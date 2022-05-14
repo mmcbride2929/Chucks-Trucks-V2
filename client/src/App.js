@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/inventory" element={<Inventory />} />
-          <Route path="inventory/:inventoryId" element={<SingleVehicle />} />
+          <Route path="inventory/:name" element={<SingleVehicle />} />
         </Routes>
       </ChakraProvider>
     </BrowserRouter>

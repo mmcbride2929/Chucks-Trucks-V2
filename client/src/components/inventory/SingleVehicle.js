@@ -6,12 +6,13 @@ const SingleVehicle = () => {
   const [vehicle, setVehicle] = useState({})
   const location = useLocation()
   const path = location.pathname.split('/')[2]
-
+  //console.log(path)
   useEffect(() => {
     const fetchVehicle = async () => {
       const response = await axios.get(
         `http://localhost:5000/api/v1/inventory/${path}`
       )
+
       setVehicle(response.data)
     }
     fetchVehicle()

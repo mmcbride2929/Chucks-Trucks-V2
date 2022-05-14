@@ -1,11 +1,18 @@
 
 
+WHEN THE SELECT CHANGES THE INVENTORY  state NEEDS_TO_CHANGE
+
+this can be changed with a fetch request that is activated on change of the select then set state
+
+
+
 
 5-13-22
--- sort by: price, year, mileage, reset
+
 -- get endpoint to show only non working cars on click of btn
 -- set state for current sort
 -- add context
+-- sort by: price, year, mileage, reset
 -- set up in error for when we go to a path that is not created..    
 
 

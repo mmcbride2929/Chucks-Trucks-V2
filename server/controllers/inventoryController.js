@@ -20,11 +20,28 @@ const getAllVehicles = async (req, res) => {
 
 const getSingleVehicle = async (req, res) => {
   try {
-    const singleVehicle = await Vehicle.findById(req.params.id)
+    const path = req.url.replace('/', '')
+    const yellow = decodeURI(path)
+
+    const red = yellow.split(' ').join('')
+    console.log(red)
+    // need to delete % from path
+    const singleVehicle = await Vehicle.findOne({ name: red })
+
     res.status(200).send(singleVehicle)
   } catch (error) {
     res.status(500).json({ msg: 'fetch failed: there was an error' })
   }
 }
 
-export { postVehicle, getAllVehicles, getSingleVehicle }
+const sortVehiclesByMiles = async (req, res) => {
+  try {
+    const vehicles = await Vehicle.find()
+    const sorted = vehicles.filter((vehicle) => vehicle.miles < 50000)
+    res.status(200).send(sorted)
+  } catch (error) {
+    res.status(500).json({ msg: 'fetch failed: there was an error' })
+  }
+}
+
+export { postVehicle, getAllVehicles, getSingleVehicle, sortVehiclesByMiles }

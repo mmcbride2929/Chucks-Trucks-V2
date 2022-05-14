@@ -3,7 +3,7 @@ const Vehicle = ({ vehicle }) => {
   const { name, miles, year, photo } = vehicle
   return (
     <>
-      <Link to={`/inventory/${vehicle._id}`}>
+      <Link to={`/inventory/${vehicle.name}`}>
         <p>{name}</p>
       </Link>
       <p>{miles}</p>
