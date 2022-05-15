@@ -1,17 +1,16 @@
-import { useContext } from 'react'
+import { useState, createContext } from 'react'
 
 const InventoryContext = createContext()
 
-const InventoryProvider = ({ children }) => {
-  const initialState = {
-    currentVehicles: [],
-    loading: false,
+export const InventoryProvider = ({ children }) => {
+  const [inventory, setInventory] = useState([])
+
+  const penguin = () => {
+    console.log('pickle')
   }
 
-  const [state, dispatch] = useReducer(inventoryReducer, initialState)
-
   return (
-    <InventoryContext.Provider value={{ ...state, dispatch }}>
+    <InventoryContext.Provider value={{ inventory, setInventory, penguin }}>
       {children}
     </InventoryContext.Provider>
   )

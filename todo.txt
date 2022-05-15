@@ -1,10 +1,10 @@
 
 
-WHEN THE SELECT CHANGES THE INVENTORY  state NEEDS_TO_CHANGE
+
+
+working on: getting select to send axios request to the backends and sort unchanged
 
 this can be changed with a fetch request that is activated on change of the select then set state
-
-
 
 
 5-13-22
@@ -12,11 +12,11 @@ this can be changed with a fetch request that is activated on change of the sele
 -- get endpoint to show only non working cars on click of btn
 -- set state for current sort
 -- add context
--- sort by: price, year, mileage, reset
+
 -- set up in error for when we go to a path that is not created..    
 
 
-
+-- custom parameters when looking at single car
 
 -- add loading state to when we are fetching anything 
 
@@ -26,6 +26,13 @@ this can be changed with a fetch request that is activated on change of the sele
  and nest sale price with inventory
 -- create 6 more cars
 
+
+
+questions:
+
+- how to have unique parameters/link name match the item
+
+- how to lower the amount of routs,by having reverse in the same method
 
 -- on load of the home page we can fetch the inventory with only sales, add the data to an array, and carousel through it.
 

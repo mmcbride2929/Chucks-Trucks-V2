@@ -5,11 +5,28 @@ import {
   getAllVehicles,
   postVehicle,
   getSingleVehicle,
-  sortVehiclesByMiles,
+  sortByMilesLow,
+  sortByPriceLow,
+  sortByYearsLow,
+  sortByMilesHigh,
+  sortByPriceHigh,
+  sortByYearsHigh,
 } from '../controllers/inventoryController.js'
 
+// sorted
+router.route('/sortBy=miles').get(sortByMilesLow)
+router.route('/sortBy=milesReverse').get(sortByMilesHigh)
+
+router.route('/sortBy=price').get(sortByPriceLow)
+router.route('/sortBy=priceReverse').get(sortByPriceHigh)
+
+router.route('/sortBy=years').get(sortByYearsLow)
+router.route('/sortBy=yearsReverse').get(sortByYearsHigh)
+
+// all
 router.route('/').post(postVehicle).get(getAllVehicles)
-router.route('/sort').get(sortVehiclesByMiles)
-router.route('/:name').get(getSingleVehicle)
+
+// single
+router.route('/:id').get(getSingleVehicle)
 
 export default router
