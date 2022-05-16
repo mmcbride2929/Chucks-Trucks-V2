@@ -5,12 +5,8 @@ const InventoryContext = createContext()
 export const InventoryProvider = ({ children }) => {
   const [inventory, setInventory] = useState([])
 
-  const penguin = () => {
-    console.log('pickle')
-  }
-
   return (
-    <InventoryContext.Provider value={{ inventory, setInventory, penguin }}>
+    <InventoryContext.Provider value={{ inventory, setInventory }}>
       {children}
     </InventoryContext.Provider>
   )

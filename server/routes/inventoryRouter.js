@@ -14,14 +14,14 @@ import {
 } from '../controllers/inventoryController.js'
 
 // sorted
-router.route('/sortBy=miles').get(sortByMilesLow)
-router.route('/sortBy=milesReverse').get(sortByMilesHigh)
+router.route('/sortBy=milesHigh').get(sortByMilesHigh)
+router.route('/sortBy=milesLow').get(sortByMilesLow)
 
-router.route('/sortBy=price').get(sortByPriceLow)
-router.route('/sortBy=priceReverse').get(sortByPriceHigh)
+router.route('/sortBy=priceHigh').get(sortByPriceHigh)
+router.route('/sortBy=priceLow').get(sortByPriceLow)
 
-router.route('/sortBy=years').get(sortByYearsLow)
-router.route('/sortBy=yearsReverse').get(sortByYearsHigh)
+router.route('/sortBy=yearsHigh').get(sortByYearsHigh)
+router.route('/sortBy=yearsLow').get(sortByYearsLow)
 
 // all
 router.route('/').post(postVehicle).get(getAllVehicles)

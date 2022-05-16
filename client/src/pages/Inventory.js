@@ -1,13 +1,13 @@
 import { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
-import TestBtn from '../components/inventory/TestBtn'
 import Vehicles from '../components/inventory/Vehicles'
 import { useLocation } from 'react-router-dom'
 import InventoryContext from '../context/InventoryContext'
+import SortBySelect from '../components/inventory/SortBySelect'
 
 const Inventory = () => {
   const { search } = useLocation()
-  const { inventory, setInventory, penguin } = useContext(InventoryContext)
+  const { inventory, setInventory } = useContext(InventoryContext)
 
   // fetching all vehicles on page load
   useEffect(() => {
@@ -17,13 +17,12 @@ const Inventory = () => {
       setInventory(response.data)
     }
     fetchInventory()
-    console.log(penguin())
-  }, [search])
+  }, [])
 
   return (
     <div>
       <Vehicles vehicles={inventory} />
-      <TestBtn />
+      <SortBySelect />
     </div>
   )
 }
