@@ -10,6 +10,7 @@ dotenv.config()
 import connectDB from './db/connect.js'
 
 // routers
+import homeRouter from './routes/homeRouter.js'
 import inventoryRouter from './routes/inventoryRouter.js'
 
 //middleware
@@ -22,6 +23,7 @@ app.use(express.json())
 app.use(cors())
 
 //routes
+app.use('/api/v1/home', homeRouter)
 app.use('/api/v1/inventory', inventoryRouter)
 
 // 404 response

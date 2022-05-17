@@ -1,42 +1,22 @@
+5-16-22
+re-do app.js... 
+create new route on server.. 
+create new home router
+create new controller for home
+add useEffect on home page and pass data to salecont
 
 
+-- create Sale and SaleItem components
+-- map all SaleItems  to Sale component.. 
 
-
-working on: getting select to send axios request to the backends and sort unchanged
-
-this can be changed with a fetch request that is activated on change of the select then set state
-
-
-5-13-22
-
--- get endpoint to show only non working cars on click of btn
--- set state for current sort
--- add context
 
 -- set up in error for when we go to a path that is not created..    
-
 
 -- custom parameters when looking at single car
 
 -- add loading state to when we are fetching anything 
 
-
-
--- add onSale field for some trucks
- and nest sale price with inventory
--- create 6 more cars
-
-
-
-questions:
-
-- how to have unique parameters/link name match the item
-
-- how to lower the amount of routs,by having reverse in the same method
-
--- on load of the home page we can fetch the inventory with only sales, add the data to an array, and carousel through it.
-
-
+-- add onSale field for some trucks and nest sale price with inventory
 
 
 
@@ -45,6 +25,24 @@ questions:
 MISC
 -- ad tab icon favicon
 -- allow from anywhere MONGO (heroku)
+-- What should I do for a contact page/quote page? I want to make a cool form that shows off my skills but not sure of what to make on a website that isn't for a legit business
+
+questions:
+
+-- is it better practice to fetch only cars that are on sale on backend, or to copy state, and filter them on front end
+
+-- how to have unique parameters/link name match the item
+
+-- how to lower the amount of routs,by having reverse in the same method
+ 
+-- If I want to display fetched data on both home page & inventory page.. where is the best place to fetch the data? Home.js or App.js?
+
+
+
+
+
+
+
 
 
 

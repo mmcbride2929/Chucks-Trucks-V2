@@ -1,24 +1,26 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ChakraProvider } from '@chakra-ui/react'
+import { InventoryProvider } from './context/InventoryContext'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 import SingleVehicle from './components/inventory/SingleVehicle'
 import Home from './pages/Home'
 import Inventory from './pages/Inventory'
-import { InventoryProvider } from './context/InventoryContext'
+import InventoryContext from './context/InventoryContext'
 
-function App() {
+const app = () => {
   return (
-    <BrowserRouter>
-      <InventoryProvider>
-        <ChakraProvider>
+    <InventoryProvider>
+      <ChakraProvider>
+        <Router>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/inventory" element={<Inventory />} />
             <Route path="inventory/:name" element={<SingleVehicle />} />
           </Routes>
-        </ChakraProvider>
-      </InventoryProvider>
-    </BrowserRouter>
+        </Router>
+      </ChakraProvider>
+    </InventoryProvider>
   )
 }
 
-export default App
+export default app
