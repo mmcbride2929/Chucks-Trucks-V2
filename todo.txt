@@ -1,13 +1,6 @@
-5-16-22
-re-do app.js... 
-create new route on server.. 
-create new home router
-create new controller for home
-add useEffect on home page and pass data to salecont
+5-17-22
+-- start building header
 
-
--- create Sale and SaleItem components
--- map all SaleItems  to Sale component.. 
 
 
 -- set up in error for when we go to a path that is not created..    

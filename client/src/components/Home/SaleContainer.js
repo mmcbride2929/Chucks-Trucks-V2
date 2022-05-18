@@ -1,8 +1,12 @@
-import { useContext } from 'react'
-import InventoryContext from '../../context/InventoryContext'
+import SaleItems from './SaleItems'
 
-const SaleContainer = () => {
-  const { inventory } = useContext(InventoryContext)
-  return <div>{}</div>
+const SaleContainer = ({ forSaleVehicles }) => {
+  return (
+    <>
+      {forSaleVehicles.map((vehicle, index) => (
+        <SaleItems key={index} vehicle={vehicle} />
+      ))}
+    </>
+  )
 }
 export default SaleContainer

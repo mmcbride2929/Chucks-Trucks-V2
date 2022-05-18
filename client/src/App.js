@@ -6,17 +6,21 @@ import SingleVehicle from './components/inventory/SingleVehicle'
 import Home from './pages/Home'
 import Inventory from './pages/Inventory'
 import InventoryContext from './context/InventoryContext'
+import Navbar from './components/layout/Navbar'
 
 const app = () => {
   return (
     <InventoryProvider>
       <ChakraProvider>
         <Router>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/inventory" element={<Inventory />} />
-            <Route path="inventory/:name" element={<SingleVehicle />} />
-          </Routes>
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/inventory" element={<Inventory />} />
+              <Route path="inventory/:name" element={<SingleVehicle />} />
+            </Routes>
+          </main>
         </Router>
       </ChakraProvider>
     </InventoryProvider>

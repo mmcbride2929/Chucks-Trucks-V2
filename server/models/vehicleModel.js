@@ -6,6 +6,7 @@ const Vehicle = new mongoose.Schema({
   year: { type: Number, required: true },
   photo: { type: String, required: true },
   price: { type: Number, required: true },
+  sale: { type: Object, required: true },
   size: { type: String, required: true },
   condition: { type: String, required: true },
   description: { type: String, required: true },

@@ -1,4 +1,4 @@
-const SaleItems = () => {
-  return <div>SaleItems</div>
+const SaleItems = ({ vehicle }) => {
+  return <>{vehicle.name}</>
 }
 export default SaleItems
