@@ -18,12 +18,11 @@ import { AiOutlineMenu } from 'react-icons/ai'
 
 const Navbar = () => {
   const mobileNav = useDisclosure()
-  const colors = ['#db0000', '#000000', '#ffffff']
 
   return (
     <>
       <chakra.header
-        bg={colors[2]}
+        bg="white"
         w="full"
         px={{ base: 2, sm: 4 }}
         py={4}
@@ -56,7 +55,7 @@ const Navbar = () => {
                 display={{ base: 'flex', md: 'none' }}
                 aria-label="Open menu"
                 fontSize="20px"
-                color={useColorModeValue('gray.800', 'inherit')}
+                color="black"
                 variant="ghost"
                 icon={<AiOutlineMenu />}
                 onClick={mobileNav.onOpen}
@@ -71,11 +70,11 @@ const Navbar = () => {
                 flexDirection="column"
                 p={2}
                 pb={4}
-                m={2}
-                bg={colors[2]}
+                bg="white"
                 spacing={3}
                 rounded="sm"
                 shadow="sm"
+                zIndex="2"
               >
                 <CloseButton
                   aria-label="Close menu"

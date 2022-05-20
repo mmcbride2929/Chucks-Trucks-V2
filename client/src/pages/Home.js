@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-import SaleContainer from '../components/Home/SaleContainer'
+import Sale from '../components/Home/Sale'
 import Hero from '../components/Home/Hero'
+import Reviews from '../components/Home/Reviews'
 
 const Home = () => {
   const [forSaleVehicles, setForSaleVehicles] = useState([])
@@ -21,7 +22,8 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <SaleContainer forSaleVehicles={forSaleVehicles} />
+      <Sale forSaleVehicles={forSaleVehicles} />
+      <Reviews />
     </>
   )
 }

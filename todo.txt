@@ -1,5 +1,14 @@
-5-17-22
--- start building header
+SALE SECTION
+
+link sale vehicle to single page..
+
+
+REVIEW SECTION
+review card section needs to only be as wide as card
+card stars
+review header
+
+
 
 
 
