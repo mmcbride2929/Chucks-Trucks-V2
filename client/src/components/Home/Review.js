@@ -9,7 +9,7 @@ const Review = ({ review }) => {
       alignItems="center"
       justifyContent="center"
       my={6}
-      mx={{ base: 5, sm: '15px' }}
+      mx={{ base: 5, sm: '1px', md: '15px' }}
     >
       <Flex
         maxW="lg"
@@ -34,13 +34,14 @@ const Review = ({ review }) => {
 
         <Box
           w={{ base: '100%', md: 2 / 3 }}
-          py={{ base: 2, md: 4 }}
+          py={{ base: 2, md: 2 }}
           px={{ base: 5, md: 4 }}
         >
           <Flex
             spacing={1}
             flexDirection={{ base: 'column', md: 'row' }}
             alignItems="center"
+            justifyContent={{ base: '', md: 'space-evenly' }}
             mt={2}
           >
             <Box>

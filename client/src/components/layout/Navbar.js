@@ -15,9 +15,13 @@ import {
   Image,
 } from '@chakra-ui/react'
 import { AiOutlineMenu } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
   const mobileNav = useDisclosure()
+
+  // navigate with react-router
+  const navigate = useNavigate()
 
   return (
     <>
@@ -36,7 +40,11 @@ const Navbar = () => {
               display="flex"
               alignItems="center"
             >
-              <Image src={logo} alt="logo" maxW="185px" />
+              <Image
+                src={logo}
+                alt="logo"
+                maxW={{ base: '185px', md: '225px' }}
+              />
             </chakra.a>
           </Flex>
           <HStack display="flex" alignItems="center" spacing={1}>
@@ -46,9 +54,15 @@ const Navbar = () => {
               color="brand.500"
               display={{ base: 'none', md: 'inline-flex' }}
             >
-              <Button variant="ghost">Inventory</Button>
-              <Button variant="ghost">Quote</Button>
-              <Button variant="ghost">About</Button>
+              <Button onClick={() => navigate('/inventory')} variant="ghost">
+                Inventory
+              </Button>
+              <Button onClick={() => navigate('/quote')} variant="ghost">
+                Quote
+              </Button>
+              <Button onClick={() => navigate('/about')} variant="ghost">
+                About
+              </Button>
             </HStack>
             <Box display={{ base: 'inline-flex', md: 'none' }}>
               <IconButton

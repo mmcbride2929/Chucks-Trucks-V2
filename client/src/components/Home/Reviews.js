@@ -31,9 +31,16 @@ const Reviews = () => {
   return (
     <Box bg="red" p={5}>
       <ReviewHeader />
-      {userReviews.map((review, index) => (
-        <Review key={index} review={review} />
-      ))}
+      <Box
+        p={{ base: 0, md: 6 }}
+        display="flex"
+        flexDirection={{ base: 'column', lg: 'row' }}
+        justifyContent="center"
+      >
+        {userReviews.map((review, index) => (
+          <Review key={index} review={review} />
+        ))}
+      </Box>
     </Box>
   )
 }

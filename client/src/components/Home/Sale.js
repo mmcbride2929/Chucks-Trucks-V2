@@ -4,7 +4,7 @@ import SaleItems from './SaleItems'
 const Sale = ({ forSaleVehicles }) => {
   return (
     <Box>
-      <Box textAlign="center" pt={{ base: 5, sm: 5 }}>
+      <Box textAlign="center" p={{ base: 5, sm: 5, lg: 6 }}>
         <chakra.h1
           fontSize={{ base: '1.8rem', sm: '2.2rem' }}
           fontWeight="bold"

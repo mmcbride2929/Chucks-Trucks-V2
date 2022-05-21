@@ -51,26 +51,20 @@ const SaleItems = ({ vehicle }) => {
         ${price}
       </Badge>
 
-      <Box
-        px="10px"
-        pt="2"
-        pb="4"
-        mx={{ base: '60px', md: '40px', lg: '30px', xl: '65px' }}
-        textAlign="center"
-      >
-        <Box px={{ md: '60px', lg: '0px' }}>
+      <Box px="10px" pt="2" pb="4" w="350px" textAlign="center">
+        <Box>
           <chakra.h1 fontSize={['1.2rem', '1.25rem']} fontWeight="bold">
             {year} - {name}
           </chakra.h1>
 
           <Box
-            mx={6}
+            mx={20}
             color="black"
             textAlign="center"
             fontSize="sm"
             display="flex"
             alignItems="center"
-            justifyContent="space-around"
+            justifyContent="space-evenly"
           >
             <chakra.p fontWeight="bold">Sale price: </chakra.p>
             <Badge
