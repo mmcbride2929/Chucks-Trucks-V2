@@ -3,7 +3,8 @@ import axios from 'axios'
 
 import Vehicles from '../components/inventory/Vehicles'
 import InventoryContext from '../context/InventoryContext'
-import SortBySelect from '../components/inventory/SortBySelect'
+import Header from '../components/inventory/Header'
+import { Box } from '@chakra-ui/react'
 
 const Inventory = () => {
   const { inventory, setInventory } = useContext(InventoryContext)
@@ -11,17 +12,17 @@ const Inventory = () => {
   // fetching all vehicles on page load
   useEffect(() => {
     const fetchInventory = async () => {
-      const response = await axios.get('/inventory')
+      const response = await axios.get('/inventory/sortBy=priceLow')
       setInventory(response.data)
     }
     fetchInventory()
   }, [])
 
   return (
-    <div>
+    <Box as="section" p={8}>
+      <Header />
       <Vehicles vehicles={inventory} />
-      <SortBySelect />
-    </div>
+    </Box>
   )
 }
 export default Inventory

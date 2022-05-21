@@ -9,7 +9,6 @@ const SortBySelect = () => {
   // put methods in here... fetch and set inventory
   const handleSort = async (e) => {
     const sortType = e.target.value
-    console.log(sortType)
     const response = await axios.get(
       `http://localhost:5000/api/v1/inventory/sortBy=${sortType}`
     )
@@ -18,11 +17,19 @@ const SortBySelect = () => {
 
   return (
     <div>
-      <Select onChange={handleSort} size="md" placeholder="Select option">
+      <Select
+        onChange={handleSort}
+        w={{ base: '145px' }}
+        fontSize={{ base: 'xs' }}
+        size="md"
+        placeholder="Sort By"
+      >
+        <option value="priceLow">Price - Lowest</option>
+        <option value="priceHigh">Price - Highest</option>
         <option value="milesLow">Mileage - Lowest</option>
         <option value="milesHigh">Mileage - Highest</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
+        <option value="yearsLow">Year - Lowest</option>
+        <option value="yearsHigh">Year - Highest</option>
       </Select>
     </div>
   )

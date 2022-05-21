@@ -7,12 +7,7 @@ REVIEW SECTION
 
 -- set up in error for when we go to a path that is not created..    
 
--- custom parameters when looking at single car
-
 -- add loading state to when we are fetching anything 
-
--- add onSale field for some trucks and nest sale price with inventory
-
 
 
 
@@ -26,7 +21,7 @@ questions:
 
 -- is it better practice to fetch only cars that are on sale on backend, or to copy state, and filter them on front end
 
--- how to have unique parameters/link name match the item
+-- how to have unique parameters/link name match the item (couldn't get items with space in name)
 
 -- how to lower the amount of routs,by having reverse in the same method
  

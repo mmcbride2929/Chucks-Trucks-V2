@@ -18,7 +18,7 @@ const SaleItems = ({ vehicle }) => {
 
   return (
     <Box
-      bg="whitesmoke"
+      bg="white"
       maxW="md"
       borderWidth="1px"
       marginTop={5}
@@ -48,36 +48,34 @@ const SaleItems = ({ vehicle }) => {
         borderRadius="3px"
         textDecoration="solid line-through whitesmoke 3px"
       >
-        ${price}
+        ${price.toLocaleString('en-US')}
       </Badge>
 
       <Box px="10px" pt="2" pb="4" w="350px" textAlign="center">
         <Box>
-          <chakra.h1 fontSize={['1.2rem', '1.25rem']} fontWeight="bold">
+          <chakra.h1 fontSize={['1.2rem', '1.25rem']} fontWeight="bold" mb={2}>
             {year} - {name}
           </chakra.h1>
 
           <Box
-            mx={20}
+            px={{ base: '55px', md: '80px' }}
             color="black"
             textAlign="center"
-            fontSize="sm"
+            fontSize="md"
             display="flex"
             alignItems="center"
-            justifyContent="space-evenly"
+            justifyContent="center"
           >
             <chakra.p fontWeight="bold">Sale price: </chakra.p>
-            <Badge
+            <chakra.p
               mx="10px"
               py="1px"
-              color="white"
-              borderRadius="3px"
-              bg="red"
+              color="red"
               fontSize={'1rem'}
               fontWeight="bold"
             >
-              ${vehicle.sale.salePrice}
-            </Badge>
+              ${vehicle.sale.salePrice.toLocaleString('en-US')}
+            </chakra.p>
           </Box>
         </Box>
         <chakra.p>
