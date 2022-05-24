@@ -22,7 +22,6 @@ const SortBySelect = () => {
         w={{ base: '145px' }}
         fontSize={{ base: 'xs' }}
         size="md"
-        placeholder="Sort By"
       >
         <option value="priceLow">Price - Lowest</option>
         <option value="priceHigh">Price - Highest</option>

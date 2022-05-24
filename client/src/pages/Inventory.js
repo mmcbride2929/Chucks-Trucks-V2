@@ -19,7 +19,7 @@ const Inventory = () => {
   }, [])
 
   return (
-    <Box as="section" p={8}>
+    <Box as="section" p={8} maxW="1200px" m="0 auto">
       <Header />
       <Vehicles vehicles={inventory} />
     </Box>

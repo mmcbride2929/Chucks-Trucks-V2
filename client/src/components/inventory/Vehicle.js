@@ -57,16 +57,16 @@ const Vehicle = ({ vehicle }) => {
               justifyContent="center"
             >
               <chakra.p fontWeight="bold"> Price: </chakra.p>
-              <Badge
+
+              <chakra.p
                 mx="10px"
-                color="white"
-                borderRadius="3px"
-                bg="red"
+                py="1px"
+                color="red"
                 fontSize={'1rem'}
                 fontWeight="bold"
               >
                 ${price.toLocaleString('en-US')}
-              </Badge>
+              </chakra.p>
             </Box>
             <chakra.p>
               <chakra.span fontWeight="bold"> Miles: </chakra.span>

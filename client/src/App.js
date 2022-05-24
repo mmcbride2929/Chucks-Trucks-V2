@@ -8,6 +8,7 @@ import Inventory from './pages/Inventory'
 import Navbar from './components/layout/Navbar'
 import { myTheme } from './theme/theme'
 import Footer from './components/layout/Footer'
+import About from './pages/About'
 
 const app = () => {
   return (
@@ -19,6 +20,7 @@ const app = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/inventory" element={<Inventory />} />
+              <Route path="/about" element={<About />} />
               <Route path="inventory/:name" element={<SingleVehicle />} />
             </Routes>
           </main>

@@ -13,6 +13,7 @@ import {
   IconButton,
   CloseButton,
   Image,
+  Link,
 } from '@chakra-ui/react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
@@ -43,7 +44,7 @@ const Navbar = () => {
               <Image
                 src={logo}
                 alt="logo"
-                maxW={{ base: '185px', md: '225px' }}
+                maxW={{ base: '185px', sm: '225px' }}
               />
             </chakra.a>
           </Flex>
@@ -95,17 +96,38 @@ const Navbar = () => {
                   onClick={mobileNav.onClose}
                 />
 
-                <Button w="full" variant="ghost">
-                  Home
+                <Button
+                  w="30%"
+                  variant="ghost"
+                  border="1px solid black"
+                  onClick={mobileNav.onClose}
+                >
+                  <Link onClick={() => navigate('/')}>Home</Link>
                 </Button>
-                <Button w="full" variant="ghost">
-                  Inventory
+                <Button
+                  w="30%"
+                  border="1px solid black"
+                  variant="ghost"
+                  onClick={mobileNav.onClose}
+                >
+                  <Link onClick={() => navigate('/inventory')}>Inventory</Link>
                 </Button>
-                <Button w="full" variant="ghost">
-                  Quote
+                <Button
+                  w="30%"
+                  border="1px solid black"
+                  variant="ghost"
+                  onClick={mobileNav.onClose}
+                >
+                  <Link onClick={() => navigate('/quote')}>Quote</Link>
                 </Button>
-                <Button w="full" variant="ghost">
-                  About
+
+                <Button
+                  w="30%"
+                  variant="ghost"
+                  border="1px solid black"
+                  onClick={mobileNav.onClose}
+                >
+                  <Link onClick={() => navigate('/about')}>About</Link>
                 </Button>
               </VStack>
             </Box>
