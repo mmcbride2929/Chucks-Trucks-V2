@@ -26,7 +26,6 @@ const Vehicle = ({ vehicle }) => {
         borderWidth="1px"
         marginTop={5}
         marginBottom={10}
-        mx={4}
         rounded="lg"
         boxShadow="xl"
         position="relative"

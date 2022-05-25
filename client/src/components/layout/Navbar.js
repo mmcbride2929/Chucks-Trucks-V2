@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <>
       <chakra.header
-        bg="white"
+        bg="red"
         w="full"
         px={{ base: 2, sm: 4 }}
         py={4}
@@ -35,12 +35,7 @@ const Navbar = () => {
       >
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
           <Flex>
-            <chakra.a
-              href="/"
-              title="Choc Home Page"
-              display="flex"
-              alignItems="center"
-            >
+            <chakra.a href="/" display="flex" alignItems="center">
               <Image
                 src={logo}
                 alt="logo"
@@ -52,16 +47,28 @@ const Navbar = () => {
             <HStack
               spacing={1}
               mr={1}
-              color="brand.500"
+              color="white"
               display={{ base: 'none', md: 'inline-flex' }}
             >
-              <Button onClick={() => navigate('/inventory')} variant="ghost">
+              <Button
+                onClick={() => navigate('/inventory')}
+                variant="ghost"
+                _hover={{ color: 'black', bg: 'white' }}
+              >
                 Inventory
               </Button>
-              <Button onClick={() => navigate('/quote')} variant="ghost">
-                Quote
+              <Button
+                onClick={() => navigate('/Finance')}
+                variant="ghost"
+                _hover={{ color: 'black', bg: 'white' }}
+              >
+                Finance
               </Button>
-              <Button onClick={() => navigate('/about')} variant="ghost">
+              <Button
+                onClick={() => navigate('/about')}
+                variant="ghost"
+                _hover={{ color: 'black', bg: 'white' }}
+              >
                 About
               </Button>
             </HStack>
@@ -70,10 +77,11 @@ const Navbar = () => {
                 display={{ base: 'flex', md: 'none' }}
                 aria-label="Open menu"
                 fontSize="20px"
-                color="black"
+                color="white"
                 variant="ghost"
                 icon={<AiOutlineMenu />}
                 onClick={mobileNav.onOpen}
+                _hover={{ color: 'black', bg: 'white' }}
               />
 
               <VStack
@@ -85,11 +93,12 @@ const Navbar = () => {
                 flexDirection="column"
                 p={2}
                 pb={4}
-                bg="white"
+                bg="red"
                 spacing={3}
                 rounded="sm"
                 shadow="sm"
                 zIndex="2"
+                color="white"
               >
                 <CloseButton
                   aria-label="Close menu"
@@ -99,14 +108,16 @@ const Navbar = () => {
                 <Button
                   w="30%"
                   variant="ghost"
-                  border="1px solid black"
+                  border="1px solid white"
+                  _hover={{ color: 'black', bg: 'white' }}
                   onClick={mobileNav.onClose}
                 >
                   <Link onClick={() => navigate('/')}>Home</Link>
                 </Button>
                 <Button
                   w="30%"
-                  border="1px solid black"
+                  border="1px solid white"
+                  _hover={{ color: 'black', bg: 'white' }}
                   variant="ghost"
                   onClick={mobileNav.onClose}
                 >
@@ -114,17 +125,19 @@ const Navbar = () => {
                 </Button>
                 <Button
                   w="30%"
-                  border="1px solid black"
+                  border="1px solid white"
+                  _hover={{ color: 'black', bg: 'white' }}
                   variant="ghost"
                   onClick={mobileNav.onClose}
                 >
-                  <Link onClick={() => navigate('/quote')}>Quote</Link>
+                  <Link onClick={() => navigate('/finance')}>Finance</Link>
                 </Button>
 
                 <Button
                   w="30%"
                   variant="ghost"
-                  border="1px solid black"
+                  border="1px solid white"
+                  _hover={{ color: 'black', bg: 'white' }}
                   onClick={mobileNav.onClose}
                 >
                   <Link onClick={() => navigate('/about')}>About</Link>

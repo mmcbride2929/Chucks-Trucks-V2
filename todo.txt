@@ -9,6 +9,9 @@ REVIEW SECTION
 
 -- add loading state to when we are fetching anything 
 
+-- all fonts and headers match in size, boldness
+
+-- all padding matches across all pages
 
 
 
