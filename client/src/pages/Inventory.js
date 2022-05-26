@@ -20,13 +20,24 @@ const Inventory = () => {
   }, [])
 
   return (
-    <Box as="section" p={8} m="0 auto">
+    <Box
+      as="section"
+      p={8}
+      paddingLeft={{ base: 8, lg: 0 }}
+      m="0 auto"
+      maxW="1350px"
+    >
       <Header />
       <Box display="flex">
-        <Box display={{ base: 'none', md: 'block' }} w="33%">
+        <Box display={{ base: 'none', lg: 'block' }} w="25%">
           <FeatureList />
         </Box>
-        <Box w={{ base: '', md: '66%' }} margin="0 auto">
+        <Box
+          w={{ base: '', lg: '66%' }}
+          margin="0 auto"
+          display={{ base: '', lg: 'flex' }}
+          justifyContent={{ base: '', lg: 'center' }}
+        >
           <Vehicles vehicles={inventory} />
         </Box>
       </Box>

@@ -1,14 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import {
-  chakra,
-  Box,
-  Flex,
-  Image,
-  Badge,
-  Stack,
-  Button,
-  Link,
-} from '@chakra-ui/react'
+import { chakra, Box, Button, Link } from '@chakra-ui/react'
 
 const Vehicle = ({ vehicle }) => {
   const { name, miles, year, photo, price, condition, _id, description } =
@@ -24,7 +15,7 @@ const Vehicle = ({ vehicle }) => {
         maxW={{ base: 'sm' }}
         h={{ base: '500px', lg: '490px' }}
         borderWidth="1px"
-        marginTop={5}
+        marginTop={{ base: 5, sm: 0 }}
         marginBottom={10}
         rounded="lg"
         boxShadow="xl"
@@ -101,9 +92,7 @@ const Vehicle = ({ vehicle }) => {
                 color: 'white',
               }}
             >
-              <Link onClick={() => navigate(`inventory/${_id}`)}>
-                CHECK AVAILABILITY
-              </Link>
+              <Link onClick={() => navigate(`${_id}`)}>CHECK AVAILABILITY</Link>
             </Button>
           </Box>
         </Box>

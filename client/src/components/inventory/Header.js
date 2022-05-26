@@ -7,7 +7,7 @@ const Header = () => {
   const { inventory } = useContext(InventoryContext)
 
   return (
-    <Box as="header">
+    <Box as="header" mb={{ base: 0, sm: 10 }} paddingLeft={{ base: 0, md: 8 }}>
       <Flex justifyContent="space-between">
         <chakra.h1
           fontSize={{ base: '1.6rem', sm: '2.2rem' }}
@@ -17,7 +17,9 @@ const Header = () => {
         </chakra.h1>
         <SortBySelect />
       </Flex>
-      <chakra.h3>{inventory.length} Results</chakra.h3>
+      <chakra.h3 borderBottom="2px solid whitesmoke">
+        {inventory.length} Results
+      </chakra.h3>
     </Box>
   )
 }

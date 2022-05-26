@@ -1,3 +1,7 @@
+import logo from '../../img/logo/logo.png'
+
+import { AiOutlineCheckCircle } from 'react-icons/ai'
+
 import {
   chakra,
   Box,
@@ -6,70 +10,72 @@ import {
   SimpleGrid,
   Button,
   VStack,
+  Image,
 } from '@chakra-ui/react'
 const FeatureList = () => {
   return (
-    <Flex
-      bg={useColorModeValue('#F9FAFB', 'gray.600')}
-      p={20}
+    <Box
+      d="flex"
       justifyContent="center"
       alignItems="center"
+      flexDirection="column"
+      shadow="xl"
+      bg="red"
+      p={4}
+      py={8}
     >
-      <Box
-        shadow="xl"
-        bg={useColorModeValue('white', 'gray.800')}
-        px={8}
-        py={20}
-        mx="auto"
+      <chakra.h2
+        mb={3}
+        fontSize={{ base: '', lg: '1.8rem' }}
+        fontWeight="bold"
+        textAlign={{ base: '', lg: 'center' }}
+        color="white"
+        lineHeight="shorter"
+        letterSpacing="tight"
       >
-        <SimpleGrid
-          alignItems="center"
-          columns={{ base: 1, lg: 2 }}
-          spacingY={{ base: 10, lg: 32 }}
-          spacingX={{ base: 10, lg: 24 }}
-        >
-          <Box>
-            <chakra.h2
-              mb={3}
-              fontSize={{ base: '3xl', md: '4xl' }}
-              fontWeight="extrabold"
-              textAlign={{ base: 'center', sm: 'left' }}
-              color={useColorModeValue('black')}
-              lineHeight="shorter"
-              letterSpacing="tight"
-            >
-              Become a Partner
-            </chakra.h2>
-            <chakra.p
-              mb={6}
-              fontSize={{ base: 'lg', md: 'xl' }}
-              textAlign={{ base: 'center', sm: 'left' }}
-              color={useColorModeValue('gray.600', 'gray.500')}
-            >
-              Let's put our heads together to build a successful partnership to
-              benefit both your customers and your business.
-            </chakra.p>
-            <Button
-              as="a"
-              variant="solid"
-              w={{ base: 'full', sm: 'auto' }}
-              colorScheme="brand"
-              size="lg"
-            >
-              Become a Partner
-            </Button>
-          </Box>
-          <VStack
-            direction="column"
-            flexGrow={1}
-            spacing={5}
-            alignItems="start"
-          >
-            <chakra.h4>Email APIs, SMTP Relay, and Webhooks</chakra.h4>
-          </VStack>
-        </SimpleGrid>
+        We Promise
+      </chakra.h2>
+      <Box color="white" w="175px" m="0 auto">
+        <Box display="flex" alignItems="center">
+          <AiOutlineCheckCircle size={22} />
+          <chakra.p m={2}>No Warranties</chakra.p>
+        </Box>
+        <Box display="flex" alignItems="center">
+          <AiOutlineCheckCircle size={22} />
+          <chakra.p m={2}>Semi-Clean Titles</chakra.p>
+        </Box>
+        <Box display="flex" alignItems="center">
+          <AiOutlineCheckCircle size={22} />
+          <chakra.p m={2}>No Test Drives</chakra.p>
+        </Box>
+        <Box display="flex" alignItems="center">
+          <AiOutlineCheckCircle size={22} />
+          <chakra.p m={2}>Free Oil Changes</chakra.p>
+        </Box>
+        <Box display="flex" alignItems="center">
+          <AiOutlineCheckCircle size={22} />
+          <chakra.p m={2}>Fair Interest Rates*</chakra.p>
+        </Box>
       </Box>
-    </Flex>
+      <chakra.h2
+        mt={12}
+        mb={4}
+        fontSize={{ base: '', lg: '1.1rem' }}
+        fontWeight="bold"
+        textAlign={{ base: '', lg: 'center' }}
+        color="white"
+        lineHeight="shorter"
+        letterSpacing="tight"
+      >
+        Satisfaction Guaranteed
+      </chakra.h2>
+      <chakra.p color="white">
+        Are you tired of buying trucks that break down after 5 or 6 years? Why
+        do that when you can get a truck thats ALREADY broken down. It's only
+        up-hill from here!
+      </chakra.p>
+      <Image src={logo} w="220px" m="0 auto" mt={10} />
+    </Box>
   )
 }
 export default FeatureList
