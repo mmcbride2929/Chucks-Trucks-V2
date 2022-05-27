@@ -13,7 +13,6 @@ const CallToAction = () => {
       alignItems="center"
       justifyContent="center"
       flexDir="column"
-      maxW="500px"
       m="0 auto"
       bg="red"
       border="1px solid whitesmoke"
@@ -27,11 +26,11 @@ const CallToAction = () => {
         letterSpacing="tight"
         mb={4}
       >
-        <chakra.h1>
-          Ready To <chakra.span color="white">Upgrade?</chakra.span>
+        <chakra.h1 color="white">
+          Ready To <chakra.span color="black">Upgrade?</chakra.span>
         </chakra.h1>
-        <chakra.h1>
-          Stop By Chucks <chakra.span color="white">Today!</chakra.span>
+        <chakra.h1 color="white">
+          Stop By Chucks <chakra.span color="black">Today!</chakra.span>
         </chakra.h1>
       </chakra.h1>
       <Box color="white">

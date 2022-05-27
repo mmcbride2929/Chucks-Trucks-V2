@@ -58,7 +58,7 @@ const Navbar = () => {
                 Inventory
               </Button>
               <Button
-                onClick={() => navigate('/Finance')}
+                onClick={() => navigate('/finance')}
                 variant="ghost"
                 _hover={{ color: 'black', bg: 'white' }}
               >

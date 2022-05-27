@@ -1,6 +1,3 @@
-SALE SECTION
-
-REVIEW SECTION
 
 
 
@@ -15,10 +12,9 @@ REVIEW SECTION
 
 
 
-MISC
 -- ad tab icon favicon
--- allow from anywhere MONGO (heroku)
--- What should I do for a contact page/quote page? I want to make a cool form that shows off my skills but not sure of what to make on a website that isn't for a legit business
+-- clean up loading screen for single page vehicle
+-- footer needs to hug bottom if not enough content on page
 
 questions:
 
@@ -27,7 +23,7 @@ questions:
 -- how to have unique parameters/link name match the item (couldn't get items with space in name)
 
 -- how to lower the amount of routs,by having reverse in the same method
- 
+
 -- If I want to display fetched data on both home page & inventory page.. where is the best place to fetch the data? Home.js or App.js?
 
 
