@@ -1,3 +1,5 @@
+import ContactPrompt from './ContactPrompt'
+
 import {
   chakra,
   Box,
@@ -12,8 +14,39 @@ import {
   FormLabel,
   Input,
 } from '@chakra-ui/react'
+import { useState } from 'react'
 
 const Form = () => {
+  const [formInput, setFormInput] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    address: '',
+    creditScore: '',
+    downPayment: '',
+    tradeIn: 'yes',
+  })
+
+  // form display control
+  const [formActive, setFormActive] = useState('block')
+  // form prompt display control
+  const [promptActive, setPromptActive] = useState('none')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    // validating our form info with boolean
+    const validInput = await UserSchema.validInput(formInput)
+
+    // presenting user with success prompt
+    setFormActive('none')
+    setPromptActive('block')
+  }
+
+  const handleChange = (e) => {
+    setFormInput({ ...formInput, [e.target.name]: e.target.value })
+  }
+
   return (
     <Box p={8} maxW="900px" m="0 auto">
       <Box
@@ -43,6 +76,7 @@ const Form = () => {
             rounded={[null, 'md']}
             overflow={{ sm: 'hidden' }}
             mb={{ base: '10px', md: '' }}
+            display={`${formActive}`}
           >
             <Stack
               px={4}
@@ -55,7 +89,7 @@ const Form = () => {
               <SimpleGrid columns={6} spacing={6}>
                 <FormControl as={GridItem} colSpan={[6, 3]}>
                   <FormLabel
-                    htmlFor="first_name"
+                    htmlFor="firstName"
                     fontSize="1rem"
                     fontWeight="semibold"
                     color="black"
@@ -63,9 +97,11 @@ const Form = () => {
                     First name
                   </FormLabel>
                   <Input
+                    value={formInput.firstName}
+                    onChange={handleChange}
                     type="text"
-                    name="first_name"
-                    id="first_name"
+                    name="firstName"
+                    id="firstName"
                     autoComplete="given-name"
                     mt={1}
                     borderColor="black"
@@ -80,7 +116,7 @@ const Form = () => {
 
                 <FormControl as={GridItem} colSpan={[6, 3]}>
                   <FormLabel
-                    htmlFor="last_name"
+                    htmlFor="lastName"
                     fontSize="1rem"
                     fontWeight="semibold"
                     color="black"
@@ -88,9 +124,11 @@ const Form = () => {
                     Last name
                   </FormLabel>
                   <Input
+                    value={formInput.lastName}
+                    onChange={handleChange}
                     type="text"
-                    name="last_name"
-                    id="last_name"
+                    name="lastName"
+                    id="lastName"
                     autoComplete="family-name"
                     mt={1}
                     borderColor="black"
@@ -105,7 +143,7 @@ const Form = () => {
 
                 <FormControl as={GridItem} colSpan={[6, 4]}>
                   <FormLabel
-                    htmlFor="email_address"
+                    htmlFor="email"
                     fontSize="1rem"
                     fontWeight="semibold"
                     color="black"
@@ -113,9 +151,11 @@ const Form = () => {
                     Email address
                   </FormLabel>
                   <Input
+                    value={formInput.email}
+                    onChange={handleChange}
                     type="text"
-                    name="email_address"
-                    id="email_address"
+                    name="email"
+                    id="email"
                     autoComplete="email"
                     mt={1}
                     borderColor="black"
@@ -128,38 +168,9 @@ const Form = () => {
                   />
                 </FormControl>
 
-                <FormControl as={GridItem} colSpan={[6, 3]}>
-                  <FormLabel
-                    htmlFor="country"
-                    fontSize="1rem"
-                    fontWeight="semibold"
-                    color="black"
-                  >
-                    Country / Region
-                  </FormLabel>
-                  <Select
-                    id="country"
-                    name="country"
-                    autoComplete="country"
-                    placeholder="Select option"
-                    mt={1}
-                    borderColor="black"
-                    bg="white"
-                    focusBorderColor="brand.800"
-                    shadow="sm"
-                    size="sm"
-                    w="full"
-                    rounded="md"
-                  >
-                    <option>United States</option>
-                    <option>Canada</option>
-                    <option>Mexico</option>
-                  </Select>
-                </FormControl>
-
                 <FormControl as={GridItem} colSpan={6}>
                   <FormLabel
-                    htmlFor="street_address"
+                    htmlFor="address"
                     fontSize="1rem"
                     fontWeight="semibold"
                     color="black"
@@ -167,9 +178,11 @@ const Form = () => {
                     Street address
                   </FormLabel>
                   <Input
+                    value={formInput.address}
+                    onChange={handleChange}
                     type="text"
-                    name="street_address"
-                    id="street_address"
+                    name="address"
+                    id="address"
                     autoComplete="street-address"
                     mt={1}
                     borderColor="black"
@@ -184,18 +197,20 @@ const Form = () => {
 
                 <FormControl as={GridItem} colSpan={[6, 6, null, 2]}>
                   <FormLabel
-                    htmlFor="city"
+                    htmlFor="creditScore"
                     fontSize="1rem"
                     fontWeight="semibold"
                     color="black"
                   >
-                    City
+                    Credit Score
                   </FormLabel>
                   <Input
+                    value={formInput.creditScore}
+                    onChange={handleChange}
                     type="text"
-                    name="city"
-                    id="city"
-                    autoComplete="city"
+                    name="creditScore"
+                    id="creditScore"
+                    autoComplete="credit-score"
                     mt={1}
                     borderColor="black"
                     bg="white"
@@ -209,18 +224,20 @@ const Form = () => {
 
                 <FormControl as={GridItem} colSpan={[6, 3, null, 2]}>
                   <FormLabel
-                    htmlFor="state"
+                    htmlFor="downPayment"
                     fontSize="1rem"
                     fontWeight="semibold"
                     color="black"
                   >
-                    State / Province
+                    Down Payment
                   </FormLabel>
                   <Input
+                    value={formInput.downPayment}
+                    onChange={handleChange}
                     type="text"
-                    name="state"
-                    id="state"
-                    autoComplete="state"
+                    name="downPayment"
+                    id="downPayment"
+                    autoComplete="down-payment"
                     mt={1}
                     borderColor="black"
                     bg="white"
@@ -231,21 +248,22 @@ const Form = () => {
                     rounded="md"
                   />
                 </FormControl>
-
                 <FormControl as={GridItem} colSpan={[6, 3, null, 2]}>
                   <FormLabel
-                    htmlFor="postal_code"
+                    htmlFor="tradeIn"
                     fontSize="1rem"
                     fontWeight="semibold"
                     color="black"
                   >
-                    ZIP / Postal
+                    Trade-In
                   </FormLabel>
-                  <Input
+                  <Select
+                    value={formInput.tradeIn}
+                    onChange={handleChange}
                     type="text"
-                    name="postal_code"
-                    id="postal_code"
-                    autoComplete="postal-code"
+                    _placeholder="yes"
+                    name="tradeIn"
+                    id="tradeIn"
                     mt={1}
                     borderColor="black"
                     bg="white"
@@ -254,12 +272,16 @@ const Form = () => {
                     size="sm"
                     w="full"
                     rounded="md"
-                  />
+                  >
+                    <option value="yes">yes</option>
+                    <option value="no">no</option>
+                  </Select>
                 </FormControl>
               </SimpleGrid>
             </Stack>
             <Box px={{ base: 4, sm: 6 }} py={3} bg="red" textAlign="center">
               <Button
+                onClick={handleSubmit}
                 mx="15px"
                 bg="white"
                 color="red"
@@ -274,6 +296,7 @@ const Form = () => {
           </chakra.form>
         </GridItem>
       </SimpleGrid>
+      <ContactPrompt promptActive={`${promptActive}`} />
     </Box>
   )
 }

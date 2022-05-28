@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <Box
       w="full"
-      h="500px"
+      h="400px"
       backgroundImage={bgPhoto}
       bgPos="center"
       bgSize="cover"
@@ -54,7 +54,7 @@ const Header = () => {
               </chakra.span>
             </chakra.h3>
             <chakra.p
-              fontSize={{ base: '1.1rem', md: '1.5rem' }}
+              fontSize={{ base: '1.1rem', md: '1.3rem' }}
               color="white"
               py={1}
               px={{ base: 6, sm: 14 }}

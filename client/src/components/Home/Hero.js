@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 
 import heroPhoto from '../../img/photos/trucks-hero.jpg'
-import logo from '../../img/logo/logo.png'
+import logo from '../../img/logo/logoRED.png'
 import {
   chakra,
   Box,
