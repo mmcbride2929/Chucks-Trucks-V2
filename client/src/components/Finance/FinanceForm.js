@@ -15,8 +15,9 @@ import {
   Input,
 } from '@chakra-ui/react'
 import { useState } from 'react'
+import validator from 'validator'
 
-const Form = () => {
+const FinanceForm = () => {
   const [formInput, setFormInput] = useState({
     firstName: '',
     lastName: '',
@@ -27,24 +28,88 @@ const Form = () => {
     tradeIn: 'yes',
   })
 
-  // form display control
+  // form display before submit
   const [formActive, setFormActive] = useState('block')
-  // form prompt display control
+  // form prompt display after submit
   const [promptActive, setPromptActive] = useState('none')
+  // setting our form errors
+  const [formErrors, setFormErrors] = useState({})
+  const [validEmail, setValidEmail] = useState(false)
+
+  // validating our user input
+  const validateForm = (formInput) => {
+    const errorObject = {}
+
+    if (!formInput.firstName) {
+      errorObject.firstName = 'Name Required'
+    }
+
+    if (!formInput.lastName) {
+      errorObject.lastName = 'Name Required'
+    }
+
+    // validating email with validator
+    if (validator.isEmail(formInput.email)) {
+      setValidEmail(true)
+    } else {
+      setValidEmail(false)
+      errorObject.email = 'required'
+    }
+
+    if (!formInput.address) {
+      errorObject.address = 'required'
+    }
+
+    if (!formInput.creditScore) {
+      errorObject.creditScore = 'required'
+    }
+
+    if (formInput.creditScore > 1000 || formInput.creditScore < 1) {
+      errorObject.creditScore = 'invalid score'
+    }
+
+    if (!formInput.downPayment) {
+      errorObject.downPayment = 'required'
+    }
+
+    if (formInput.downPayment > 50000 || formInput.downPayment < 1) {
+      errorObject.downPayment = 'invalid amount'
+    }
+
+    return errorObject
+  }
+
+  // handling any changes to our form inputs
+  const handleChange = (e) => {
+    setFormInput({ ...formInput, [e.target.name]: e.target.value })
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    // validating our form info with boolean
-    const validInput = await UserSchema.validInput(formInput)
+    // getting object that may contain errors
+    const errorCheck = validateForm(formInput)
 
-    // presenting user with success prompt
-    setFormActive('none')
-    setPromptActive('block')
-  }
+    //if any errors present
+    if (
+      errorCheck.firstName ||
+      errorCheck.lastName ||
+      errorCheck.email ||
+      errorCheck.address ||
+      errorCheck.downPayment ||
+      errorCheck.creditScore
+    ) {
+      // set errors in state for display
+      setFormErrors(validateForm(formInput))
 
-  const handleChange = (e) => {
-    setFormInput({ ...formInput, [e.target.name]: e.target.value })
+      // else display success promt + submit
+    } else {
+      // presenting user with success prompt
+      setFormActive('none')
+      setPromptActive('block')
+
+      // we could send form info to its own collection here.
+    }
   }
 
   return (
@@ -99,6 +164,9 @@ const Form = () => {
                   <Input
                     value={formInput.firstName}
                     onChange={handleChange}
+                    position="relative"
+                    required
+                    maxLength="25"
                     type="text"
                     name="firstName"
                     id="firstName"
@@ -112,6 +180,16 @@ const Form = () => {
                     w="full"
                     rounded="md"
                   />
+                  <chakra.p
+                    color="red"
+                    fontWeight="semibold"
+                    position={'absolute'}
+                    top={{ base: '15px', md: '12px' }}
+                    right={{ base: '10px', md: '15px' }}
+                    fontSize={{ base: '0.8rem', md: '15px' }}
+                  >
+                    {formInput.firstName === '' ? formErrors.firstName : ''}
+                  </chakra.p>
                 </FormControl>
 
                 <FormControl as={GridItem} colSpan={[6, 3]}>
@@ -129,6 +207,8 @@ const Form = () => {
                     type="text"
                     name="lastName"
                     id="lastName"
+                    required
+                    maxLength="25"
                     autoComplete="family-name"
                     mt={1}
                     borderColor="black"
@@ -139,9 +219,19 @@ const Form = () => {
                     w="full"
                     rounded="md"
                   />
+                  <chakra.p
+                    color="red"
+                    fontWeight="semibold"
+                    position={'absolute'}
+                    top={{ base: '15px', md: '12px' }}
+                    right={{ base: '10px', md: '15px' }}
+                    fontSize={{ base: '0.8rem', md: '15px' }}
+                  >
+                    {formInput.lastName === '' ? formErrors.lastName : ''}
+                  </chakra.p>
                 </FormControl>
 
-                <FormControl as={GridItem} colSpan={[6, 4]}>
+                <FormControl isRequired as={GridItem} colSpan={[6, 4]}>
                   <FormLabel
                     htmlFor="email"
                     fontSize="1rem"
@@ -153,9 +243,10 @@ const Form = () => {
                   <Input
                     value={formInput.email}
                     onChange={handleChange}
-                    type="text"
+                    type="email"
                     name="email"
                     id="email"
+                    required
                     autoComplete="email"
                     mt={1}
                     borderColor="black"
@@ -166,6 +257,16 @@ const Form = () => {
                     w="full"
                     rounded="md"
                   />
+                  <chakra.p
+                    color="red"
+                    fontWeight="semibold"
+                    position={'absolute'}
+                    top={{ base: '15px', md: '12px' }}
+                    right={{ base: '10px', md: '15px' }}
+                    fontSize={{ base: '0.8rem', md: '15px' }}
+                  >
+                    {validEmail === false ? formErrors.email : ''}
+                  </chakra.p>
                 </FormControl>
 
                 <FormControl as={GridItem} colSpan={6}>
@@ -207,7 +308,11 @@ const Form = () => {
                   <Input
                     value={formInput.creditScore}
                     onChange={handleChange}
-                    type="text"
+                    type="number"
+                    min="1"
+                    max="999"
+                    maxLength={4}
+                    required
                     name="creditScore"
                     id="creditScore"
                     autoComplete="credit-score"
@@ -220,6 +325,22 @@ const Form = () => {
                     w="full"
                     rounded="md"
                   />
+                  <chakra.p
+                    color="red"
+                    fontWeight="semibold"
+                    position={'absolute'}
+                    top={{ base: '15px', md: '12px' }}
+                    right={{ base: '10px', md: '15px' }}
+                    fontSize={{ base: '0.8rem', md: '15px' }}
+                  >
+                    {formInput.creditScore === ''
+                      ? formErrors.creditScore
+                      : '' || formInput.creditScore > 1000
+                      ? formErrors.creditScore
+                      : '' || formInput.creditScore < 1
+                      ? formErrors.creditScore
+                      : ''}
+                  </chakra.p>
                 </FormControl>
 
                 <FormControl as={GridItem} colSpan={[6, 3, null, 2]}>
@@ -234,7 +355,10 @@ const Form = () => {
                   <Input
                     value={formInput.downPayment}
                     onChange={handleChange}
-                    type="text"
+                    type="number"
+                    min="500"
+                    max="50000"
+                    required
                     name="downPayment"
                     id="downPayment"
                     autoComplete="down-payment"
@@ -247,6 +371,22 @@ const Form = () => {
                     w="full"
                     rounded="md"
                   />
+                  <chakra.p
+                    color="red"
+                    fontWeight="semibold"
+                    position={'absolute'}
+                    top={{ base: '15px', md: '12px' }}
+                    right={{ base: '10px', md: '15px' }}
+                    fontSize={{ base: '0.8rem', md: '15px' }}
+                  >
+                    {formInput.downPayment === ''
+                      ? formErrors.downPayment
+                      : '' || formInput.downPayment > 50000
+                      ? formErrors.downPayment
+                      : '' || formInput.downPayment < 1
+                      ? formErrors.downPayment
+                      : ''}
+                  </chakra.p>
                 </FormControl>
                 <FormControl as={GridItem} colSpan={[6, 3, null, 2]}>
                   <FormLabel
@@ -300,4 +440,4 @@ const Form = () => {
     </Box>
   )
 }
-export default Form
+export default FinanceForm

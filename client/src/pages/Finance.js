@@ -1,11 +1,11 @@
-import Form from '../components/Finance/Form'
+import FinanceForm from '../components/Finance/FinanceForm'
 import Header from '../components/Finance/Header'
 
 const Finance = () => {
   return (
     <>
       <Header />
-      <Form />
+      <FinanceForm />
     </>
   )
 }

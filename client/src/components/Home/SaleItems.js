@@ -20,7 +20,6 @@ const SaleItems = ({ vehicle }) => {
     <Box
       bg="white"
       maxW="md"
-      borderWidth="1px"
       marginTop={5}
       marginBottom={10}
       mx={4}

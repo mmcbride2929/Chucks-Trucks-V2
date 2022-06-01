@@ -3,12 +3,6 @@ import { useState } from 'react'
 import Review from './Review'
 import ReviewHeader from './ReviewHeader'
 
-// create the background
-
-// map the reviews
-// default 5 stars.. rating > 1 ? gold star
-// rating >2 gold star.. etc
-
 const Reviews = () => {
   const [userReviews, setUserReviews] = useState([
     {
@@ -29,7 +23,7 @@ const Reviews = () => {
     },
   ])
   return (
-    <Box bg="red" p={5}>
+    <Box bg="white" p={5}>
       <ReviewHeader />
       <Box
         p={{ base: 0, md: 6 }}

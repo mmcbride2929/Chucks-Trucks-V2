@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { Box, ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import { InventoryProvider } from './context/InventoryContext'
@@ -11,6 +11,7 @@ import Footer from './components/layout/Footer'
 import About from './pages/About'
 import SingleVehicle from './pages/SingleVehicle'
 import Finance from './pages/Finance'
+import Error from './pages/Error'
 
 const app = () => {
   return (
@@ -18,16 +19,16 @@ const app = () => {
       <ChakraProvider theme={myTheme}>
         <Router>
           <Navbar />
-          <main>
+          <Box as="body" minH="88vh">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/inventory" element={<Inventory />} />
               <Route path="/about" element={<About />} />
               <Route path="/finance" element={<Finance />} />
-
               <Route path="inventory/:id" element={<SingleVehicle />} />
+              <Route path="*" element={<Error />} />
             </Routes>
-          </main>
+          </Box>
           <Footer />
         </Router>
       </ChakraProvider>

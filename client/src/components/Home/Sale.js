@@ -3,18 +3,19 @@ import SaleItems from './SaleItems'
 
 const Sale = ({ forSaleVehicles }) => {
   return (
-    <Box>
+    <Box bg="red">
       <Box textAlign="center" p={{ base: 5, sm: 5, lg: 6 }}>
         <chakra.h1
           fontSize={{ base: '1.8rem', sm: '2.2rem' }}
           fontWeight="bold"
+          color="white"
         >
           Featured Vehicles
         </chakra.h1>
         <chakra.p
           fontSize={{ base: '1.1rem', sm: '1.7rem' }}
           fontWeight="bold"
-          color="red"
+          color="white"
         >
           DON'T MISS OUT!
         </chakra.p>

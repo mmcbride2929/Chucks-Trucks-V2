@@ -27,6 +27,7 @@ const Navbar = () => {
   return (
     <>
       <chakra.header
+        h="7vh"
         bg="red"
         w="full"
         px={{ base: 2, sm: 4 }}

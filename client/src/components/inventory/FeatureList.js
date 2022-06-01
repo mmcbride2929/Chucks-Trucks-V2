@@ -54,7 +54,7 @@ const FeatureList = () => {
         </Box>
         <Box display="flex" alignItems="center">
           <AiOutlineCheckCircle size={22} />
-          <chakra.p m={2}>Fair Interest Rates*</chakra.p>
+          <chakra.p m={2}>Fair Rates*</chakra.p>
         </Box>
       </Box>
       <chakra.h2

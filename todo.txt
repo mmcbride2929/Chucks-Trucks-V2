@@ -1,28 +1,21 @@
 
 
-handleSubmit, hide form, unhide prompt
-
-
-add input validation
 
 
 
 
-
-
--- set up in error for when we go to a path that is not created..    
 
 -- add loading state to when we are fetching anything 
+-- clean up loading screen for single page vehicle
+
+
 
 -- all fonts and headers match in size, boldness
+
 
 -- all padding matches across all pages
 
 
-
--- ad tab icon favicon
--- clean up loading screen for single page vehicle
--- footer needs to hug bottom if not enough content on page
 
 questions:
 
