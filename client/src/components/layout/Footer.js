@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <Flex w="full" bg="red" p="5px" alignItems="center" justifyContent="center">
       <Flex
-        h="5vh"
+        h={{ base: 'vh', sm: '5vh' }}
         w="full"
         as="footer"
         flexDir={{ base: 'column', sm: 'row' }}

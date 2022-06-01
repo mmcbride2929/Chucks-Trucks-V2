@@ -1,4 +1,4 @@
-import { Link, Box, Heading, Text } from '@chakra-ui/react'
+import { chakra, Box, Heading, Text } from '@chakra-ui/react'
 
 import { WarningTwoIcon } from '@chakra-ui/icons'
 
@@ -20,9 +20,13 @@ const Error = () => {
       </Heading>
       <Text color="black">
         Go Back{' '}
-        <Link to="/" textDecoration="underline" textDecorationColor="black">
+        <chakra.a
+          href="/"
+          textDecoration="underline"
+          textDecorationColor="black"
+        >
           Home
-        </Link>
+        </chakra.a>
       </Text>
     </Box>
   )

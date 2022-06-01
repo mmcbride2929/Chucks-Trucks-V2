@@ -47,8 +47,8 @@ const SingleVehicle = () => {
     <Container maxW={'7xl'}>
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 18, lg: 24 }}
+        spacing={{ base: 6, md: 10 }}
+        p={{ base: 5, sm: 5, lg: 6 }}
       >
         <Flex>
           {loading ? (
@@ -65,7 +65,7 @@ const SingleVehicle = () => {
             />
           )}
         </Flex>
-        <Stack spacing={{ base: 6, md: 10 }}>
+        <Stack spacing={{ base: 6, md: 6 }}>
           <Box as={'header'}>
             <Heading
               lineHeight={1.1}
@@ -149,9 +149,9 @@ const SingleVehicle = () => {
             </Box>
           </Stack>
           <Box display="flex" alignItems="center" justifyContent="center">
-            {' '}
             <Button
               w="125px"
+              mt={{ base: '35px', sm: '5px', md: '25px' }}
               bg="red"
               color="white"
               fontSize="0.9rem"

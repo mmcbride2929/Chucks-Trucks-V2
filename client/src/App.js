@@ -19,7 +19,7 @@ const app = () => {
       <ChakraProvider theme={myTheme}>
         <Router>
           <Navbar />
-          <Box as="body" minH="88vh">
+          <Box as="body" minH={{ base: '92vh', sm: '88vh' }}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/inventory" element={<Inventory />} />
