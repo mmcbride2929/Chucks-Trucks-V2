@@ -1,0 +1,22 @@
+{
+  "name": "chucks-trucks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server && npm start",
+    "start-client": "cd client && npm start",
+    "start-both": "concurrently \"npm start\" \"npm run start-client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmcbride2929/Chucks-Trucks-V2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmcbride2929/Chucks-Trucks-V2/issues"
+  },
+  "homepage": "https://github.com/mmcbride2929/Chucks-Trucks-V2#readme"
+}

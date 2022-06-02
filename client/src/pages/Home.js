@@ -13,7 +13,9 @@ const Home = () => {
     const fetchSaleVehicles = async () => {
       const vehicles = await axios.get(
         'https://chucks-trucks.herokuapp.com/api/v1/home/forSaleVehicles'
+        // '/api/v1/home/forSaleVehicles'
       )
+
       setForSaleVehicles(vehicles.data)
     }
     fetchSaleVehicles()
