@@ -13,7 +13,9 @@ const Inventory = () => {
   // fetching all vehicles on page load
   useEffect(() => {
     const fetchInventory = async () => {
-      const response = await axios.get('/inventory/sortBy=priceLow')
+      const response = await axios.get(
+        'https://chucks-trucks.herokuapp.com/api/v1/inventory/sortBy=priceLow'
+      )
       setInventory(response.data)
     }
     fetchInventory()

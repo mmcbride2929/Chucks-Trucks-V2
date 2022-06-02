@@ -23,6 +23,10 @@ app.use(express.json())
 app.use(cors())
 
 //routes
+app.get('/', (req, res) => {
+  res.send('Hello-Motto')
+})
+
 app.use('/api/v1/home', homeRouter)
 app.use('/api/v1/inventory', inventoryRouter)
 

@@ -10,7 +10,7 @@ const SortBySelect = () => {
   const handleSort = async (e) => {
     const sortType = e.target.value
     const response = await axios.get(
-      `http://localhost:5000/api/v1/inventory/sortBy=${sortType}`
+      `https://chucks-trucks.herokuapp.com/api/v1/inventory/sortBy=${sortType}`
     )
     setInventory(response.data)
   }
