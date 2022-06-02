@@ -1,6 +1,7 @@
 import cors from 'cors'
 import express from 'express'
 import dotenv from 'dotenv'
+import path from 'path'
 
 // initializing express instance
 const app = express()
@@ -16,9 +17,15 @@ import inventoryRouter from './routes/inventoryRouter.js'
 //middleware
 import notFoundMiddleware from './middleware/not-found.js'
 import errorHandlerMiddleware from './middleware/error-handler.js'
+import { fileURLToPath } from 'url'
 
 // req.body json parsing middleware
 app.use(express.json())
+
+const filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(filename)
+
+app.use(express.static(path.resolve(__dirname, '../client/build')))
 
 app.use(cors())
 
