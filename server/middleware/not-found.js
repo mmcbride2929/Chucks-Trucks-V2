@@ -1,4 +1,10 @@
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(filename)
+
 const notFoundMiddleware = (req, res) =>
-  res.status(404).send('Route Does Not Exist')
+  res.sendFile(path.resolve(__dirname, '../../client/build/index.html'))
 
 export default notFoundMiddleware
