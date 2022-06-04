@@ -122,7 +122,7 @@ const Navbar = () => {
 
                 <Button
                   fontSize="0.9rem"
-                  w="25%"
+                  w="30%"
                   variant="ghost"
                   border="1px solid white"
                   _hover={{ color: 'black', bg: 'white' }}
@@ -131,7 +131,7 @@ const Navbar = () => {
                   <Link onClick={() => navigate('/')}>Home</Link>
                 </Button>
                 <Button
-                  w="25%"
+                  w="30%"
                   fontSize="0.9rem"
                   border="1px solid white"
                   _hover={{ color: 'black', bg: 'white' }}
@@ -141,7 +141,7 @@ const Navbar = () => {
                   <Link onClick={() => navigate('/inventory')}>Inventory</Link>
                 </Button>
                 <Button
-                  w="25%"
+                  w="30%"
                   fontSize="0.9rem"
                   border="1px solid white"
                   _hover={{ color: 'black', bg: 'white' }}
@@ -152,7 +152,7 @@ const Navbar = () => {
                 </Button>
 
                 <Button
-                  w="25%"
+                  w="30%"
                   fontSize="0.9rem"
                   variant="ghost"
                   border="1px solid white"
