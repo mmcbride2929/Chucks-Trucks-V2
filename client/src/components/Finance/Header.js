@@ -29,11 +29,11 @@ const Header = () => {
           >
             <Image
               src={logo}
-              w={{ base: '325px', md: '375px' }}
+              w={{ base: '300px', sm: '350px' }}
               boxShadow="lg"
             />
             <Heading
-              fontSize={{ base: '1.8rem', md: '2.2rem' }}
+              fontSize={{ base: '1.6rem', md: '2rem' }}
               fontWeight="bold"
               color="white"
               textTransform="uppercase"
@@ -43,7 +43,7 @@ const Header = () => {
           </Stack>
           <Box textAlign="center" alignItems="center" mb={['65px', , '']}>
             <chakra.h3
-              fontSize={{ base: '1.4rem', md: '2.2rem' }}
+              fontSize={{ base: '1.2rem', md: '2rem' }}
               fontWeight="semibold"
               color="white"
               textTransform="uppercase"
@@ -54,7 +54,7 @@ const Header = () => {
               </chakra.span>
             </chakra.h3>
             <chakra.p
-              fontSize={{ base: '1.1rem', md: '1.3rem' }}
+              fontSize={{ base: '0.8rem', md: '1rem' }}
               color="white"
               py={1}
               px={{ base: 6, sm: 14 }}

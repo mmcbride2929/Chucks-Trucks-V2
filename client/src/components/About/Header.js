@@ -5,7 +5,8 @@ const Header = () => {
     <Heading
       pt={{ base: 0, md: 10 }}
       fontWeight="bold"
-      fontSize={{ base: '1.7rem', sm: '2.2rem', lg: '2.6rem' }}
+      fontSize={{ base: '1.6rem', sm: '2.0rem', lg: '2.2rem' }}
+      px={{ base: '25px', sm: '100px', lg: '150px' }}
       textAlign="center"
       letterSpacing="tight"
     >
@@ -21,7 +22,7 @@ const Header = () => {
       <Flex justifyContent="center" mt={2} direction="column">
         <Box
           fontWeight="500"
-          fontSize={{ base: '1rem', sm: '1.5rem', lg: '1.8rem' }}
+          fontSize={{ base: '1rem', sm: '1.1rem', lg: '1.3rem' }}
           letterSpacing="normal"
         >
           <chakra.h3>

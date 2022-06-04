@@ -41,11 +41,11 @@ const FinanceForm = () => {
     const errorObject = {}
 
     if (!formInput.firstName) {
-      errorObject.firstName = 'Name Required'
+      errorObject.firstName = 'name required'
     }
 
     if (!formInput.lastName) {
-      errorObject.lastName = 'Name Required'
+      errorObject.lastName = 'name required'
     }
 
     // validating email with validator
@@ -118,13 +118,10 @@ const FinanceForm = () => {
         px={{ base: '0px', md: '20px' }}
         textAlign={{ base: 'center', md: null }}
       >
-        <Heading
-          fontSize={{ base: '1.1rem', sm: '1.3rem', md: '2rem' }}
-          fontWeight="500"
-        >
+        <Heading fontSize={{ base: '1.6rem', sm: '2rem' }} fontWeight="500">
           Personal Information
         </Heading>
-        <Text mt={1} fontSize={{ base: '0.85rem', sm: '1rem', md: '1.2rem' }}>
+        <Text mt={1} fontSize={{ base: '1.1rem', sm: '1.1rem' }}>
           Use a permanent address where you can receive mail.
         </Text>
       </Box>
@@ -182,7 +179,6 @@ const FinanceForm = () => {
                   />
                   <chakra.p
                     color="red"
-                    fontWeight="semibold"
                     position={'absolute'}
                     top={{ base: '15px', md: '12px' }}
                     right={{ base: '10px', md: '15px' }}
@@ -221,7 +217,6 @@ const FinanceForm = () => {
                   />
                   <chakra.p
                     color="red"
-                    fontWeight="semibold"
                     position={'absolute'}
                     top={{ base: '15px', md: '12px' }}
                     right={{ base: '10px', md: '15px' }}
@@ -259,7 +254,6 @@ const FinanceForm = () => {
                   />
                   <chakra.p
                     color="red"
-                    fontWeight="semibold"
                     position={'absolute'}
                     top={{ base: '15px', md: '12px' }}
                     right={{ base: '10px', md: '15px' }}
@@ -296,7 +290,7 @@ const FinanceForm = () => {
                   />
                 </FormControl>
 
-                <FormControl as={GridItem} colSpan={[6, 6, null, 2]}>
+                <FormControl as={GridItem} colSpan={[6, 4, null, 2]}>
                   <FormLabel
                     htmlFor="creditScore"
                     fontSize="1rem"
@@ -327,7 +321,6 @@ const FinanceForm = () => {
                   />
                   <chakra.p
                     color="red"
-                    fontWeight="semibold"
                     position={'absolute'}
                     top={{ base: '15px', md: '12px' }}
                     right={{ base: '10px', md: '15px' }}
@@ -343,7 +336,7 @@ const FinanceForm = () => {
                   </chakra.p>
                 </FormControl>
 
-                <FormControl as={GridItem} colSpan={[6, 3, null, 2]}>
+                <FormControl as={GridItem} colSpan={[6, 4, null, 2]}>
                   <FormLabel
                     htmlFor="downPayment"
                     fontSize="1rem"
@@ -373,7 +366,6 @@ const FinanceForm = () => {
                   />
                   <chakra.p
                     color="red"
-                    fontWeight="semibold"
                     position={'absolute'}
                     top={{ base: '15px', md: '12px' }}
                     right={{ base: '10px', md: '15px' }}

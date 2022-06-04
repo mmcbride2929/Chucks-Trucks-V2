@@ -20,7 +20,7 @@ const Hero = () => {
   return (
     <Box
       w="full"
-      h="container.sm"
+      h="500px"
       backgroundImage={heroPhoto}
       bgPos="center"
       bgSize="cover"
@@ -40,23 +40,23 @@ const Hero = () => {
             spacing={2}
             mb={['25px', , '']}
           >
-            <Heading
-              fontSize={{ base: '1.6rem', sm: '2.2rem' }}
+            <chakra.h2
+              fontSize={{ base: '1.6rem', sm: '2rem' }}
               fontWeight="semibold"
               color="white"
               textTransform="uppercase"
             >
               welcome to
-            </Heading>
+            </chakra.h2>
             <Image
               src={logo}
-              w={{ base: '325px', sm: '375px' }}
+              w={{ base: '320px', sm: '350px' }}
               boxShadow="lg"
             />
           </Stack>
           <Box textAlign="center" alignItems="center" mb={['65px', , '']}>
             <chakra.h3
-              fontSize={{ base: '1.6rem', sm: '2.2rem' }}
+              fontSize={{ base: '1.5rem', sm: '2rem' }}
               fontWeight="bold"
               color="white"
               textTransform="uppercase"
@@ -64,20 +64,20 @@ const Hero = () => {
               celebrating 2 weeks
             </chakra.h3>
             <chakra.p
-              fontSize={{ base: '1.1rem', sm: '1.5rem' }}
+              fontSize={{ base: '1rem', sm: '1.3rem' }}
               fontWeight="semibold"
               color="white"
             >
               of service with a
             </chakra.p>
-            <chakra.h3
-              fontSize={{ base: '1.6rem', sm: '2.2rem' }}
+            <chakra.h2
+              fontSize={{ base: '1.5rem', sm: '2rem' }}
               fontWeight="bold"
               color="white"
               textTransform="uppercase"
             >
               monster sale
-            </chakra.h3>
+            </chakra.h2>
             <Button
               mt="20px"
               color="white"
@@ -87,7 +87,9 @@ const Hero = () => {
                 color: 'red',
               }}
             >
-              <Link onClick={() => navigate('/inventory')}>SHOP NOW</Link>
+              <Link fontSize="0.8rem" onClick={() => navigate('/inventory')}>
+                SHOP NOW
+              </Link>
             </Button>
           </Box>
         </Stack>

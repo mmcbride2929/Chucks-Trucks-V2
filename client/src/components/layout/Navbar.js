@@ -27,31 +27,39 @@ const Navbar = () => {
   return (
     <>
       <chakra.header
-        h="7vh"
         bg="red"
         w="full"
         px={{ base: 2, sm: 4 }}
-        py={4}
+        py={2}
         shadow="md"
+        // display="flex"
       >
-        <Flex alignItems="center" justifyContent="space-between" mx="auto">
+        <Flex
+          alignItems="center"
+          justifyContent="space-between"
+          mx="auto"
+          p={1}
+        >
           <Flex>
             <chakra.a href="/" display="flex" alignItems="center">
               <Image
                 src={logo}
                 alt="logo"
-                maxW={{ base: '185px', sm: '225px' }}
+                maxW={{ base: '175px', sm: '225px' }}
               />
             </chakra.a>
           </Flex>
           <HStack display="flex" alignItems="center" spacing={1}>
             <HStack
-              spacing={1}
+              spacing={3}
               mr={1}
               color="white"
               display={{ base: 'none', md: 'inline-flex' }}
             >
               <Button
+                h="30px"
+                w="80px"
+                fontSize="14px"
                 onClick={() => navigate('/inventory')}
                 variant="ghost"
                 _hover={{ color: 'black', bg: 'white' }}
@@ -59,6 +67,9 @@ const Navbar = () => {
                 Inventory
               </Button>
               <Button
+                h="30px"
+                w="80px"
+                fontSize="14px"
                 onClick={() => navigate('/finance')}
                 variant="ghost"
                 _hover={{ color: 'black', bg: 'white' }}
@@ -66,6 +77,9 @@ const Navbar = () => {
                 Finance
               </Button>
               <Button
+                h="30px"
+                w="80px"
+                fontSize="14px"
                 onClick={() => navigate('/about')}
                 variant="ghost"
                 _hover={{ color: 'black', bg: 'white' }}
@@ -107,7 +121,8 @@ const Navbar = () => {
                 />
 
                 <Button
-                  w="30%"
+                  fontSize="0.9rem"
+                  w="25%"
                   variant="ghost"
                   border="1px solid white"
                   _hover={{ color: 'black', bg: 'white' }}
@@ -116,7 +131,8 @@ const Navbar = () => {
                   <Link onClick={() => navigate('/')}>Home</Link>
                 </Button>
                 <Button
-                  w="30%"
+                  w="25%"
+                  fontSize="0.9rem"
                   border="1px solid white"
                   _hover={{ color: 'black', bg: 'white' }}
                   variant="ghost"
@@ -125,7 +141,8 @@ const Navbar = () => {
                   <Link onClick={() => navigate('/inventory')}>Inventory</Link>
                 </Button>
                 <Button
-                  w="30%"
+                  w="25%"
+                  fontSize="0.9rem"
                   border="1px solid white"
                   _hover={{ color: 'black', bg: 'white' }}
                   variant="ghost"
@@ -135,7 +152,8 @@ const Navbar = () => {
                 </Button>
 
                 <Button
-                  w="30%"
+                  w="25%"
+                  fontSize="0.9rem"
                   variant="ghost"
                   border="1px solid white"
                   _hover={{ color: 'black', bg: 'white' }}

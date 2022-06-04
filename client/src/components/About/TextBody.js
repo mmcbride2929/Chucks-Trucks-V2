@@ -11,14 +11,15 @@ const TextBody = () => {
       >
         <Box w={{ base: '100%', md: '50%' }}>
           <Image
-            p={8}
+            p={{ base: 4, sm: 6 }}
             m="0 auto"
+            mt={{ base: '10px', sm: '0px' }}
             src={chuck}
-            w={{ base: '24rem', base: '28rem', md: '30rem', lg: '35rem' }}
+            w={{ base: '24rem', md: '27rem', lg: '30rem' }}
           />
         </Box>
         <Box
-          py={6}
+          py={{ base: 2, sm: 4 }}
           px={4}
           w={{ base: '100%', md: '50%' }}
           fontWeight="500"
@@ -28,7 +29,7 @@ const TextBody = () => {
           <Text
             color="white"
             fontWeight="500"
-            fontSize={{ base: '1rem', sm: '1.2rem' }}
+            fontSize={{ base: '0.9rem', sm: '1.1rem' }}
           >
             Chuck's Trucks has been an established{' '}
             <Text as={'span'} fontStyle="italic" color="black">

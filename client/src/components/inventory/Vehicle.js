@@ -30,11 +30,7 @@ const Vehicle = ({ vehicle }) => {
         ></Box>
         <Box px={{ base: '20px', sm: '30px' }} pt="2" pb="4">
           <Box textAlign="center">
-            <chakra.h1
-              fontSize={['1.2rem', '1.25rem']}
-              fontWeight="bold"
-              mb={2}
-            >
+            <chakra.h1 fontSize={['1.1rem', '1.2rem']} fontWeight="bold" mb={2}>
               {year} - {name}
             </chakra.h1>
             <Box
@@ -48,28 +44,34 @@ const Vehicle = ({ vehicle }) => {
             >
               <chakra.p fontWeight="bold"> Price: </chakra.p>
 
-              <chakra.p
+              <chakra.span
                 mx="10px"
                 py="1px"
                 color="red"
-                fontSize={'1rem'}
+                fontSize={'0.9rem'}
                 fontWeight="bold"
               >
                 ${price.toLocaleString('en-US')}
-              </chakra.p>
+              </chakra.span>
             </Box>
             <chakra.p>
-              <chakra.span fontWeight="bold"> Miles: </chakra.span>
+              <chakra.span fontWeight="bold" fontSize={'0.9rem'}>
+                {' '}
+                Miles:{' '}
+              </chakra.span>
               {miles.toLocaleString('en-US')}
             </chakra.p>
             <chakra.p>
-              <chakra.span fontWeight="bold"> Condition: </chakra.span>
+              <chakra.span fontSize={'0.9rem'} fontWeight="bold">
+                {' '}
+                Condition:{' '}
+              </chakra.span>
               {condition}
             </chakra.p>
 
             <chakra.p
               mt={4}
-              fontSize={{ base: '0.9rem', sm: '1rem' }}
+              fontSize={{ base: '0.9rem', sm: '0.9rem' }}
               fontWeight="500"
             >
               {description}
@@ -84,7 +86,7 @@ const Vehicle = ({ vehicle }) => {
               bottom="10px"
               bg="red"
               color="white"
-              fontSize="0.9rem"
+              fontSize="0.8rem"
               variant="solid"
               boxShadow="lg"
               _hover={{

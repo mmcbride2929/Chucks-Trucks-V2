@@ -20,7 +20,7 @@ const Footer = () => {
           <Image src={logo} alt="logo" maxW="185px" />
         </chakra.a>
 
-        <chakra.p py={{ base: '2', sm: '0' }} color="white">
+        <chakra.p py={{ base: '0', sm: '0' }} color="white">
           All rights reserved
         </chakra.p>
       </Flex>

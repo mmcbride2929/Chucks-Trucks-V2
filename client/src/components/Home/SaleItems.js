@@ -19,7 +19,7 @@ const SaleItems = ({ vehicle }) => {
   return (
     <Box
       bg="white"
-      maxW="md"
+      w={{ base: '350px', lg: '300px' }}
       marginTop={5}
       marginBottom={10}
       mx={4}
@@ -50,14 +50,20 @@ const SaleItems = ({ vehicle }) => {
         ${price.toLocaleString('en-US')}
       </Badge>
 
-      <Box px="10px" pt="2" pb="4" w="350px" textAlign="center">
+      <Box
+        px="10px"
+        pt="2"
+        pb="4"
+        w={{ base: '350px', lg: '300px' }}
+        textAlign="center"
+      >
         <Box>
-          <chakra.h1 fontSize={['1.2rem', '1.25rem']} fontWeight="bold" mb={2}>
+          <chakra.h1 fontSize={['1.1rem', '1.2rem']} fontWeight="bold" mb={2}>
             {year} - {name}
           </chakra.h1>
 
           <Box
-            px={{ base: '55px', md: '80px' }}
+            px={{ base: '55px', md: '60px' }}
             color="black"
             textAlign="center"
             fontSize="md"
@@ -65,24 +71,23 @@ const SaleItems = ({ vehicle }) => {
             alignItems="center"
             justifyContent="center"
           >
-            <chakra.p fontWeight="bold">Sale price: </chakra.p>
-            <chakra.p
-              mx="10px"
-              py="1px"
-              color="red"
-              fontSize={'1rem'}
-              fontWeight="bold"
-            >
+            <chakra.p fontWeight="bold" fontSize={'0.9rem'}>
+              Sale price:{' '}
+            </chakra.p>
+            <chakra.p mx="10px" py="1px" color="red" fontWeight="bold">
               ${vehicle.sale.salePrice.toLocaleString('en-US')}
             </chakra.p>
           </Box>
         </Box>
-        <chakra.p>
+        <chakra.p fontSize={'0.9rem'}>
           <chakra.span fontWeight="bold"> Miles: </chakra.span>
           {miles.toLocaleString('en-US')}
         </chakra.p>
         <chakra.p>
-          <chakra.span fontWeight="bold"> Condition: </chakra.span>
+          <chakra.span fontSize={'0.9rem'} fontWeight="bold">
+            {' '}
+            Condition:{' '}
+          </chakra.span>
           {condition}
         </chakra.p>
 
@@ -90,7 +95,7 @@ const SaleItems = ({ vehicle }) => {
           mt="20px"
           bg="red"
           color="white"
-          fontSize="0.9rem"
+          fontSize="0.8rem"
           variant="solid"
           boxShadow="lg"
           _hover={{

@@ -21,7 +21,7 @@ const CallToAction = () => {
     >
       <chakra.h1
         fontWeight="bold"
-        fontSize={{ base: '1.7rem', sm: '2.2rem' }}
+        fontSize={{ base: '1.4rem', sm: '1.8rem' }}
         textAlign="center"
         letterSpacing="tight"
         mb={4}
@@ -34,20 +34,35 @@ const CallToAction = () => {
         </chakra.h1>
       </chakra.h1>
       <Box color="white">
-        <Box display="flex" alignItems="center" justifyContent="center">
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          fontSize={{ base: '0.9rem' }}
+        >
           <AiOutlineMail size={18} />{' '}
           <chakra.p mx={3}>Chuck@ChuxTrux.truck</chakra.p>
         </Box>
 
-        <Box display="flex" alignItems="center" justifyContent="center">
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          fontSize={{ base: '1rem', sm: '0.9rem' }}
+        >
           <PhoneIcon size={18} /> <chakra.p mx={3}>234-678-9567</chakra.p>
         </Box>
-        <Box display="flex" alignItems="center" justifyContent="center">
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          fontSize={{ base: '1rem', sm: '0.9rem' }}
+        >
           <FiMapPin size={18} />
-          <chakra.p mx={3}>123 Big Truck St. Columbus, OH</chakra.p>
+          <chakra.p mx={2}>123 Big Truck St. Columbus, OH</chakra.p>
         </Box>
       </Box>
-      <Box mt={{ base: 6, md: 10 }}>
+      <Box mt={{ base: 6, md: 8 }}>
         <Button
           mx="15px"
           bg="white"

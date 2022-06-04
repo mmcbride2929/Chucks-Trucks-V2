@@ -45,7 +45,7 @@ const Review = ({ review }) => {
             mt={2}
           >
             <Box>
-              <chakra.h1 fontSize="2xl" fontWeight="bold" color="white">
+              <chakra.h1 fontSize="1xl" fontWeight="bold" color="white">
                 {name}
               </chakra.h1>
             </Box>
@@ -79,7 +79,7 @@ const Review = ({ review }) => {
           </Flex>
 
           <chakra.h1
-            fontSize="2xl"
+            fontSize="1xl"
             fontWeight="bold"
             color="white"
             textAlign={{ base: 'center', md: '' }}
@@ -88,7 +88,7 @@ const Review = ({ review }) => {
             "{title}"
           </chakra.h1>
 
-          <chakra.p textAlign="center" mb={2} fontSize="0.9rem" color="white">
+          <chakra.p textAlign="center" mb={2} fontSize="0.8rem" color="white">
             "{description}"
           </chakra.p>
         </Box>
